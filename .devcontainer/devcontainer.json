@@ -1,0 +1,27 @@
+{
+    "name": "rivergo",
+    "image": "ubuntu:resolute",
+    "features": {
+        "ghcr.io/devcontainers/features/go:1": {
+            "version": "latest"
+        }
+    },
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "workspaceFolder": "/workspace",
+    "remoteUser": "ubuntu",
+    "overrideCommand": true,
+    "customizations": {
+        "vscode": {
+            "extensions": ["golang.go"],
+            "settings": {
+                "editor.linkedEditing": true,
+                "editor.formatOnPaste": true,
+                "editor.formatOnSave": true,
+
+                "[go]": {
+                    "editor.defaultFormatter": "golang.go"
+                }
+            }
+        }
+    }
+}
